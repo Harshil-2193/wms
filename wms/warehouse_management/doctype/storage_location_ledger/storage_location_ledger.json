@@ -7,7 +7,6 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_rdsg",
-  "amended_from",
   "item_code",
   "qty",
   "voucher_type",
@@ -27,37 +26,35 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Storage Location Ledger",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
    "fieldname": "item_code",
    "fieldtype": "Link",
    "label": "Item Code",
-   "options": "Item"
+   "no_copy": 1,
+   "options": "Item",
+   "read_only": 1
   },
   {
    "fieldname": "qty",
    "fieldtype": "Float",
-   "label": "Qty"
+   "label": "Qty",
+   "no_copy": 1,
+   "read_only": 1
   },
   {
    "fieldname": "voucher_type",
    "fieldtype": "Link",
    "label": "Voucher Type",
-   "options": "DocType"
+   "no_copy": 1,
+   "options": "DocType",
+   "read_only": 1
   },
   {
    "fieldname": "voucher_no",
    "fieldtype": "Dynamic Link",
    "label": "Voucher No",
-   "options": "voucher_type"
+   "no_copy": 1,
+   "options": "voucher_type",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_xcmk",
@@ -103,7 +100,6 @@
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
  "modified": "2026-07-09 07:14:09.959271",
  "modified_by": "Administrator",
@@ -122,7 +118,6 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
-   "submit": 1,
    "write": 1
   }
  ],

@@ -140,8 +140,8 @@ doc_events = {
 	# }
 
     "Stock Entry": {
-        "on_submit": "wms.events.on_submit",
-        "on_cancel": "wms.events.on_cancel",
+        "on_submit": "wms.events.events.on_submit",
+        "on_cancel": "wms.events.events.on_cancel",
     }
 }
 
