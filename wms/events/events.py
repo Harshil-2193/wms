@@ -12,8 +12,8 @@ def on_cancel(doc, method):
         from_loc = row.get("custom_from_storage_location")
         to_loc = row.get("custom_to_storage_location")
         if from_loc or to_loc:
-            # reverse direction, same doc reference — keeps audit trail intact
-            _log_movement(row, to_loc, from_loc, doc, voucher_type="Stock Entry Cancellation")
+            # swap from/to so the net effect of the entry cancels out
+            _log_movement(row, to_loc, from_loc, doc)
 
 def _log_movement(row, from_loc, to_loc, doc, voucher_type="Stock Entry"):
     entry = frappe.new_doc("Storage Location Ledger")
@@ -29,4 +29,3 @@ def _log_movement(row, from_loc, to_loc, doc, voucher_type="Stock Entry"):
         "voucher_no": doc.name,
     })
     entry.insert(ignore_permissions=True)
-    entry.submit()
