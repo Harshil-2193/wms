@@ -132,13 +132,18 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+
+    "Stock Entry": {
+        "on_submit": "wms.events.on_submit",
+        "on_cancel": "wms.events.on_cancel",
+    }
+}
 
 # Scheduled Tasks
 # ---------------
